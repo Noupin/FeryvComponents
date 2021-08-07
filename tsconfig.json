@@ -22,6 +22,6 @@
     "outDir": "./dist/",
   },
   "include": [
-    "index.tsx", "glassmorphic.tsx", "neumorphic.tsx", "react-router.tsx", "constants.ts", 
+    "../FeryvComponents"
   ]
 }
