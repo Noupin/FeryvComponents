@@ -8,7 +8,7 @@ interface IProtectedRoute extends RouteProps {
   children: React.ReactNode
 }
 
-function ProtectedRoute ({expression, children, ...rest }: IProtectedRoute) {
+export function ProtectedRoute ({expression, children, ...rest }: IProtectedRoute) {
   return (
     <Route {...rest} render={() => {
       return expression
@@ -17,5 +17,3 @@ function ProtectedRoute ({expression, children, ...rest }: IProtectedRoute) {
     }} />
   )
 }
-
-export default ProtectedRoute;
