@@ -1,11 +1,11 @@
 const path = require('path');
 
 module.exports = {
-  entry: './index.tsx',
+  entry: './index.ts',
   module: {
     rules: [
       {
-        test: /\.ts$|tsx/,
+        test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
