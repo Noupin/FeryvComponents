@@ -2,7 +2,6 @@
 import React from 'react';
 
 //First Party Imports
-import '../../App.scss'
 import './StickySidebar.scss';
 
 interface IStickySidebar extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>{
