@@ -21,7 +21,7 @@
     "jsx": "react",
     "sourceMap": true,
     "composite": true,
-    "outDir": "./dist/",
+    "outDir": "dist",
     "declaration": true,
     "rootDir": "src"
   },
