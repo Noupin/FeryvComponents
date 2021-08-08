@@ -149,6 +149,22 @@ button{
                 inset -5px -5px 5px var(--brightShadow);
 }
 
+@mixin neumorphic{
+    outline: none;
+    background-color: $sameAsBackground;
+    border: 0;
+    box-shadow: 5px 5px 10px var(--dimShadow), 
+                -5px -5px 10px var(--brightShadow);
+}
+
+@mixin insetNeumorphic{
+    outline: none;
+    background-color: $sameAsBackground;
+    border: 0;
+    box-shadow: inset 5px 5px 5px var(--dimShadow), 
+                inset -5px -5px 5px var(--brightShadow);
+}
+
 
 //Glassmorphism
 .glassmorphic{

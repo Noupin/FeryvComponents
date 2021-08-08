@@ -1,16 +1,16 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: './src/index.ts',
   mode: "production",
   devtool: "inline-source-map",
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.scss', '.css'],
+    extensions: ['.tsx', '.ts', '.js', '.scss'],
   },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)$/,
         use: [
           {
             loader: 'ts-loader',
@@ -18,11 +18,8 @@ module.exports = {
               transpileOnly: true
             }
           }
-        ]
-      },
-      {
-        test: /\.css$/,
-        use: 'css-loader'
+        ],
+        exclude: /node_modules/,
       },
       {
         test: /\.s[ac]ss$/i,
@@ -35,10 +32,14 @@ module.exports = {
           "sass-loader",
         ],
       },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
   output: {
-    filename: 'webpack.bundle.js',
+    filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
   },
 };

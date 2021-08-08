@@ -1,5 +1,5 @@
 @import "../../variables.scss";
-@import "../../App.scss";
+@import "../../index.scss";
 
 .textbox{
     @extend .insetNeumorphic;
@@ -16,11 +16,19 @@
 }
 
 @keyframes toNeu {
-    0% { box-shadow: none; }
-    100% { @extend .neumorphic; }
+    0% {
+        box-shadow: none;
+    }
+    100% {
+        @include neumorphic;
+    }
 }
 
 @keyframes toInset {
-    0% { box-shadow: none; }
-    100% { @extend .insetNeumorphic; }
+    0% {
+        box-shadow: none;
+    }
+    100% {
+        @include insetNeumorphic;
+    }
 }
