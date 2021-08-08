@@ -1,7 +1,12 @@
 {
   "name": "feryv-components",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
@@ -56,6 +61,22 @@
     "awesome-typescript-loader": "^5.2.1",
     "css-loader": "^6.2.0",
     "sass-loader": "^12.1.0",
-    "ts-loader": "^9.2.5"
-  }
+    "ts-loader": "^9.2.5",
+    "webpack-cli": "^4.7.2"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noupin/FeryvComponents.git"
+  },
+  "keywords": [
+    "feryv",
+    "neumorphic"
+  ],
+  "author": "Noupin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Noupin/FeryvComponents/issues"
+  },
+  "homepage": "https://github.com/Noupin/FeryvComponents#readme"
 }

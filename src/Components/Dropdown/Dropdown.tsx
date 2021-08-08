@@ -30,7 +30,7 @@ export const Dropdown = (props: IDropdown) => {
       </div>
       {open &&
       <div className="neumorphic borderRadius-2 mt-3">
-        {options.map((option: string) => (
+        {(options as any[]).map((option: string) => (
           <p className="dropdownOption my-1 p-2 borderRadius-2" key={option}
             onClick={() => onOptionChange(option)}>
             {option}
