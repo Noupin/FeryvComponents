@@ -3,7 +3,7 @@
   "author": "Noupin",
   "license": "MIT",
   "description": "Components for all Feryv Apps.",
-  "version": "1.2.91",
+  "version": "1.2.92",
   "private": false,
   "keywords": [
     "feryv",
@@ -21,10 +21,10 @@
   "publishConfig": {
     "@noupin:registry": "https://npm.pkg.github.com"
   },
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "build/**/*"
+    "dist/**/*"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -40,7 +40,7 @@
     "uuid": "^8.3.2"
   },
   "scripts": {
-    "build": "react-scripts build"
+    "build": "npx webpack --config webpack.config.js"
   },
   "browserslist": {
     "production": [
@@ -67,10 +67,12 @@
     "@types/react-router-dom": "^5.1.8",
     "@types/uuid": "^8.3.1",
     "css-loader": "^6.2.0",
-    "react-scripts": "^4.0.3",
+    "mini-css-extract-plugin": "^2.2.0",
     "sass": "^1.37.5",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
-    "ts-loader": "^9.2.5"
+    "ts-loader": "^9.2.5",
+    "webpack": "^5.49.0",
+    "webpack-cli": "^4.7.2"
   }
 }
