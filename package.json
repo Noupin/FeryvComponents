@@ -3,7 +3,7 @@
   "author": "Noupin",
   "license": "MIT",
   "description": "Components for all Feryv Apps.",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "private": false,
   "keywords": [
     "feryv",
@@ -24,7 +24,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist/**/*"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
