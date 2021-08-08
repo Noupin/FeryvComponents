@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.ts',
-  mode: "production",
+  mode: "development",
   devtool: "inline-source-map",
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.scss'],
@@ -41,5 +41,7 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
+    libraryTarget: "umd",
+    library: 'feryv-components',
   },
 };
