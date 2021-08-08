@@ -26,4 +26,4 @@ jobs:
       - name: Builds JS and Types
         run: npm run build
       - name: Publishing To Github NPM
-        run: npm publish --@noupin:registery=https://npm.pkg.github.com/
+        run: npm publish --@noupin:registry=https://npm.pkg.github.com/
