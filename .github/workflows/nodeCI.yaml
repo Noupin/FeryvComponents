@@ -27,3 +27,5 @@ jobs:
         run: npm run build
       - name: Publishing To Github NPM
         run: npm publish --@noupin:registry=https://npm.pkg.github.com/
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
