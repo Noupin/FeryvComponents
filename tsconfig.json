@@ -21,6 +21,10 @@
     "jsx": "react-jsx",
   },
   "include": [
-    "src", "src/*", "src/**/*"
+    "*", "Components/**/*", "Helpers/**/*"
+  ],
+  "exclude": [
+    ".eslintcache", ".gitignore", "package.json", "package-lock.json", "react-app-env.d.ts",
+    "README.md", "tsconfig.json", "yarn.lock", "webpack.config.js"
   ]
 }
