@@ -9,5 +9,5 @@ export * from './Components/Media/Media';
 export * from './Components/Video/Video';
 export * from './Components/ProtectedRoute/ProtectedRoute';
 
-export * as neumorphic from './neumorphic';
-export * as glassmorphic from './glassmorphic';
+export * from './neumorphic';
+export * from './glassmorphic';
