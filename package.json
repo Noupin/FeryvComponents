@@ -3,7 +3,7 @@
   "author": "Noupin",
   "license": "MIT",
   "description": "Components for all Feryv Apps.",
-  "version": "1.2.9",
+  "version": "1.2.91",
   "private": false,
   "keywords": [
     "feryv",
@@ -21,17 +21,16 @@
   "publishConfig": {
     "@noupin:registry": "https://npm.pkg.github.com"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "files": [
-    "dist/**/*"
+    "build/**/*"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
     "bootstrap": "^5.1.0",
-    "html-webpack-plugin": "^5.3.2",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.4",
     "react-dom": "^17.0.2",
@@ -41,7 +40,7 @@
     "uuid": "^8.3.2"
   },
   "scripts": {
-    "build": "npx webpack"
+    "build": "react-scripts build"
   },
   "browserslist": {
     "production": [
@@ -55,6 +54,12 @@
       "last 1 safari version"
     ]
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
   "devDependencies": {
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.16",
@@ -62,11 +67,10 @@
     "@types/react-router-dom": "^5.1.8",
     "@types/uuid": "^8.3.1",
     "css-loader": "^6.2.0",
+    "react-scripts": "^4.0.3",
     "sass": "^1.37.5",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
-    "ts-loader": "^9.2.5",
-    "webpack": "^5.49.0",
-    "webpack-cli": "^4.7.2"
+    "ts-loader": "^9.2.5"
   }
 }
