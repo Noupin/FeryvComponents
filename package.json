@@ -78,5 +78,8 @@
   "bugs": {
     "url": "https://github.com/Noupin/FeryvComponents/issues"
   },
-  "homepage": "https://github.com/Noupin/FeryvComponents#readme"
+  "homepage": "https://github.com/Noupin/FeryvComponents#readme",
+  "publishConfig": {
+    "@noupin:registry": "https://npm.pkg.github.com"
+  }
 }
