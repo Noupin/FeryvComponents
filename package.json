@@ -3,7 +3,7 @@
   "author": "Noupin",
   "license": "MIT",
   "description": "Components for all Feryv Apps.",
-  "version": "1.2.92",
+  "version": "1.2.93",
   "private": false,
   "keywords": [
     "feryv",
@@ -40,7 +40,7 @@
     "uuid": "^8.3.2"
   },
   "scripts": {
-    "build": "npx webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js"
   },
   "browserslist": {
     "production": [
