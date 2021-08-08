@@ -5,7 +5,7 @@ module.exports = {
   mode: "production",
   devtool: "inline-source-map",
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.scss', '.css'],
   },
   module: {
     rules: [
