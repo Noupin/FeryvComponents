@@ -41,6 +41,7 @@
     "typescript": "^4.1.2",
     "uuid": "^8.3.2"
   },
+  "prepare": "gulp",
   "scripts": {
     "build": "tsc"
   },
