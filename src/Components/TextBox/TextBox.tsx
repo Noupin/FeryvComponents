@@ -19,7 +19,7 @@ export const TextBox = (props: ITextBox) => {
   const [hidden, setHidden] = useState(true);
 
   return type === "password" ?
-    (<div className="w-100 px-0" style={{position: "relative"}}>
+    (<div className="w-100" style={{position: "relative", padding: 0}}>
       <input {...textboxProps} className={cssClasses}
              type={hidden ? type : "text"} placeholder={placeholder} onBlur={onBlur}/>
       <FontAwesomeIcon style={{position: "absolute", top: "20px", right: "15px"}}
