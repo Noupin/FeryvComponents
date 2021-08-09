@@ -48,7 +48,6 @@ module.exports = {
     }),
   ],
   externals: [
-    // nodeExternals(),
     {
       react: {
         root: 'React',
