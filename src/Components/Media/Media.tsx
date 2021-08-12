@@ -8,23 +8,21 @@ import { dropFiles, allowDrop } from '../../Helpers/dragAndDrop';
 import { validMediaFileExtesnions, videoTypes } from '../../constants';
 import './Media.scss';
 
-interface IMediaImage extends React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>{
+interface IMedia{
   mediaSrc?: File
   srcString?: string
   mediaType?: string
   droppable?: boolean
+  errorCallback?: (err: string) => void
 }
 
-interface IMediaVideo extends React.DetailedHTMLProps<React.VideoHTMLAttributes<HTMLVideoElement>, HTMLVideoElement>{
-  mediaSrc?: File
-  srcString?: string
-  mediaType?: string
-  droppable?: boolean
-}
+interface IMediaImage extends IMedia, React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>{}
+
+interface IMediaVideo extends IMedia, React.DetailedHTMLProps<React.VideoHTMLAttributes<HTMLVideoElement>, HTMLVideoElement>{}
 
 
 export const Media = (props: IMediaImage | IMediaVideo) => {
-  const {mediaSrc, srcString, mediaType, droppable, className, ...mediaProps} = props;
+  const {mediaSrc, srcString, mediaType, droppable, className, errorCallback=(err) => console.error(err), ...mediaProps} = props;
   const cssClasses = className?.toString() + "";
 
   let imageProps = mediaProps as IMediaImage;
@@ -43,7 +41,7 @@ export const Media = (props: IMediaImage | IMediaVideo) => {
       || (srcString && srcString.indexOf('video') !== -1)){
     if(droppable){
       element = <Video onDragOver={(event) => allowDrop(event)}
-                       onDrop={(event) => setMediaSrcState(dropFiles(event, (err) => console.error(err), validMediaFileExtesnions)[0])}
+                       onDrop={(event) => setMediaSrcState(dropFiles(event, errorCallback, validMediaFileExtesnions)[0])}
                        videoSrc={mediaSrcString} videoType={mediaType!}
                        className={cssClasses} {...videoProps}/>;
     }
@@ -55,7 +53,7 @@ export const Media = (props: IMediaImage | IMediaVideo) => {
   else{
     if(droppable){
       element = <Image onDragOver={(event) => allowDrop(event)}
-                       onDrop={(event) => setMediaSrcState(dropFiles(event, (err) => console.error(err), validMediaFileExtesnions)[0])}
+                       onDrop={(event) => setMediaSrcState(dropFiles(event, errorCallback, validMediaFileExtesnions)[0])}
                        imageSrc={mediaSrcString} className={cssClasses} {...imageProps}/>
     }
     else{
