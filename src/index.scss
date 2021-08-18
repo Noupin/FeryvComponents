@@ -2,95 +2,9 @@
 @import "./variables.scss";
 @import "./styles.scss";
 
-html, body{
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
-
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-li{
-    float: left;
-    justify-content: center;
-    text-decoration: none;
-}
-
-a{
-    color: var(--text-color);
-}
-
-a:hover{
-    color: var(--text-color);
-}
-
-@for $i from 1 through 12 {
-    .col-#{$i}{
-        padding: 0;
-    }
-}
-
-.expandingColumn{
-    background-color: var(--bg-color);
-}
-
-label {
-    margin: 0;
-}
-
-
-//Danger background shows over neumorphic
-.flexContentParent {
-    flex-wrap: wrap;
-}
-
-.alert-danger{
-    background-color: #f8d7da !important;
-}
-
-
-.object-fit-contain{
-    object-fit: contain;
-}
-
-.object-fit-cover{
-    object-fit: cover;
-}
-
-.forceTextWrap { 
-    white-space: pre-wrap;      /* CSS3 */   
-    white-space: -moz-pre-wrap; /* Firefox */    
-    white-space: -pre-wrap;     /* Opera <7 */   
-    white-space: -o-pre-wrap;   /* Opera 7 */    
-    word-wrap: break-word;      /* IE */
-}
-
-.textColor{
-    color: var(--text-color);
-}
-
-.lightTextColor{
-    color: #ececec;
-}
 
 button{
     color: inherit;
-}
-
-.text-align-left{
-    text-align: left !important;
-}
-
-.text-align-center{
-    text-align: center !important;
-}
-
-.text-align-right{
-    text-align: right !important;
 }
 
 .noTextSelect {
@@ -104,10 +18,10 @@ button{
 }
 
 .textBorder{
-    text-shadow: -1px 1px 0 var(--bg-color),
-                 1px 1px 0 var(--bg-color),
-                 1px -1px 0 var(--bg-color),
-                 -1px -1px 0 var(--bg-color);
+    text-shadow: -1px 1px 0 var(--feryv-bg-color),
+                 1px 1px 0 var(--feryv-bg-color),
+                 1px -1px 0 var(--feryv-bg-color),
+                 -1px -1px 0 var(--feryv-bg-color);
 }
 
 
@@ -137,32 +51,32 @@ button{
     outline: none;
     background-color: $sameAsBackground;
     border: 0;
-    box-shadow: 5px 5px 10px var(--dimShadow), 
-                -5px -5px 10px var(--brightShadow);
+    box-shadow: 5px 5px 10px var(--feryv-dimShadow), 
+                -5px -5px 10px var(--feryv-brightShadow);
 }
 
 .insetNeumorphic{
     outline: none;
     background-color: $sameAsBackground;
     border: 0;
-    box-shadow: inset 5px 5px 5px var(--dimShadow), 
-                inset -5px -5px 5px var(--brightShadow);
+    box-shadow: inset 5px 5px 5px var(--feryv-dimShadow), 
+                inset -5px -5px 5px var(--feryv-brightShadow);
 }
 
 @mixin neumorphic{
     outline: none;
     background-color: $sameAsBackground;
     border: 0;
-    box-shadow: 5px 5px 10px var(--dimShadow), 
-                -5px -5px 10px var(--brightShadow);
+    box-shadow: 5px 5px 10px var(--feryv-dimShadow), 
+                -5px -5px 10px var(--feryv-brightShadow);
 }
 
 @mixin insetNeumorphic{
     outline: none;
     background-color: $sameAsBackground;
     border: 0;
-    box-shadow: inset 5px 5px 5px var(--dimShadow), 
-                inset -5px -5px 5px var(--brightShadow);
+    box-shadow: inset 5px 5px 5px var(--feryv-dimShadow), 
+                inset -5px -5px 5px var(--feryv-brightShadow);
 }
 
 
@@ -170,15 +84,5 @@ button{
 .glassmorphic{
     z-index: 2;
     backdrop-filter: blur(10px);
-    background-color: var(--glassmorphic-bg-color);
-}
-
-//Animation
-.spinAnimation{
-    transition: transform .5s ease-in-out;
-}
-
-.spinAnimation:hover{
-    transform: rotate(90deg);
-    -webkit-transform: rotate(90deg);
+    background-color: var(--feryv-glassmorphic-bg-color);
 }

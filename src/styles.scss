@@ -1,21 +1,21 @@
 :root{
-    --bg-color: #ececec;
-    --text-color: #1f1f1f;
-    background-color: var(--bg-color);
-    --brightShadow: rgba(255, 255, 255, 0.4);
-    --dimShadow: rgba(0, 0, 0, 0.05);
-    --highContrastBrightShadow: rgba(255, 255, 255, 0.7);
-    --lowContrastBrightShadow: rgba(0, 0, 0, 0.15);
-    --glassmorphic-bg-color: rgba(255, 255, 255, 0.25)
+    --feryv-bg-color: #ececec;
+    --feryv-text-color: #1f1f1f;
+    background-color: var(--feryv-bg-color);
+    --feryv-brightShadow: rgba(255, 255, 255, 0.4);
+    --feryv-dimShadow: rgba(0, 0, 0, 0.05);
+    --feryv-highContrastBrightShadow: rgba(255, 255, 255, 0.7);
+    --feryv-lowContrastBrightShadow: rgba(0, 0, 0, 0.15);
+    --feryv-glassmorphic-bg-color: rgba(255, 255, 255, 0.25)
 }
 
 [dark-mode="true"] {
-    --bg-color: #1f1f1f;
-    --text-color: #ececec;
-    background-color: var(--bg-color);
-    --brightShadow: rgba(255, 255, 255, 0.03);
-    --dimShadow: rgba(0, 0, 0, 0.4);
-    --highContrastBrightShadow: rgba(255, 255, 255, 0.15);
-    --lowContrastBrightShadow: rgba(0, 0, 0, 0.7);
-    --glassmorphic-bg-color: rgba(0, 0, 0, 0.25)
+    --feryv-bg-color: #1f1f1f;
+    --feryv-text-color: #ececec;
+    background-color: var(--feryv-bg-color);
+    --feryv-brightShadow: rgba(255, 255, 255, 0.03);
+    --feryv-dimShadow: rgba(0, 0, 0, 0.4);
+    --feryv-highContrastBrightShadow: rgba(255, 255, 255, 0.15);
+    --feryv-lowContrastBrightShadow: rgba(0, 0, 0, 0.7);
+    --feryv-glassmorphic-bg-color: rgba(0, 0, 0, 0.25)
 }
