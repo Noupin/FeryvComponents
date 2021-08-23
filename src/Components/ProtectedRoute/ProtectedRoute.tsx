@@ -1,6 +1,7 @@
 //Third Party Imports
 import React from 'react'
-import { Route, RouteProps } from 'react-router-dom';
+import { BrowserRouter as Router,
+  Route, RouteProps } from 'react-router-dom';
 
 
 interface IProtectedRoute extends RouteProps {
@@ -13,9 +14,11 @@ export function ProtectedRoute ({expression, children,
   unauthorizedRedirect='http://auth.feryv.com/login', ...rest }: IProtectedRoute) {
 
   return (
-    <Route {...rest} render={() => {
-      return expression ?
-        children : window.location.href = `${unauthorizedRedirect}${rest.path}`
-    }} />
+    <Router>
+      <Route {...rest} render={() => {
+        return expression ?
+          children : window.location.href = `${unauthorizedRedirect}${rest.path}`
+      }}/>
+    </Router>
   )
 }
