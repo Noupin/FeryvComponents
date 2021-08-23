@@ -9,7 +9,8 @@ interface IProtectedRoute extends RouteProps {
   unauthorizedRedirect: string
 }
 
-export function ProtectedRoute ({expression, children, unauthorizedRedirect, ...rest }: IProtectedRoute) {
+export function ProtectedRoute ({expression, children,
+  unauthorizedRedirect='http://auth.feryv.com/login', ...rest }: IProtectedRoute) {
   if(!expression){
     window.location.href = unauthorizedRedirect
   }

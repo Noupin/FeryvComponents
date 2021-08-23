@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { Image } from '../Image/Image';
 import { Video } from '../Video/Video';
 import { dropFiles, allowDrop } from '../../Helpers/dragAndDrop';
-import { validMediaFileExtesnions, videoTypes } from '../../constants';
+import { validMediaFileExtensions, videoTypes } from '../../constants';
 import './Media.scss';
 
 interface IMedia{
@@ -41,7 +41,7 @@ export const Media = (props: IMediaImage | IMediaVideo) => {
       || (srcString && srcString.indexOf('video') !== -1)){
     if(droppable){
       element = <Video onDragOver={(event) => allowDrop(event)}
-                       onDrop={(event) => setMediaSrcState(dropFiles(event, errorCallback, validMediaFileExtesnions)[0])}
+                       onDrop={(event) => setMediaSrcState(dropFiles(event, errorCallback, validMediaFileExtensions)[0])}
                        videoSrc={mediaSrcString} videoType={mediaType!}
                        className={cssClasses} {...videoProps}/>;
     }
@@ -53,7 +53,7 @@ export const Media = (props: IMediaImage | IMediaVideo) => {
   else{
     if(droppable){
       element = <Image onDragOver={(event) => allowDrop(event)}
-                       onDrop={(event) => setMediaSrcState(dropFiles(event, errorCallback, validMediaFileExtesnions)[0])}
+                       onDrop={(event) => setMediaSrcState(dropFiles(event, errorCallback, validMediaFileExtensions)[0])}
                        imageSrc={mediaSrcString} className={cssClasses} {...imageProps}/>
     }
     else{
