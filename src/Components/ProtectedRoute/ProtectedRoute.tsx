@@ -11,11 +11,11 @@ interface IProtectedRoute extends RouteProps {
 
 export function ProtectedRoute ({expression, children,
   unauthorizedRedirect='http://auth.feryv.com/login', ...rest }: IProtectedRoute) {
-  if(!expression){
-    window.location.href = unauthorizedRedirect
-  }
 
   return (
-    <Route {...rest} render={() => (children)} />
+    <Route {...rest} render={() => {
+      return expression ?
+        children : window.location.href = `${unauthorizedRedirect}${rest.path}`
+    }} />
   )
 }
