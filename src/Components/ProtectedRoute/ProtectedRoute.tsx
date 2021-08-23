@@ -6,7 +6,7 @@ import { Route, RouteProps } from 'react-router-dom';
 interface IProtectedRoute extends RouteProps {
   expression: boolean
   children: React.ReactNode
-  unauthorizedRedirect: string
+  unauthorizedRedirect?: string
 }
 
 export function ProtectedRoute ({expression, children,
