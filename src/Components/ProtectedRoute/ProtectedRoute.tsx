@@ -1,19 +1,20 @@
 //Third Party Imports
 import React from 'react'
-import { Redirect, Route, RouteProps } from 'react-router-dom'
+import { Route, RouteProps } from 'react-router-dom';
 
 
 interface IProtectedRoute extends RouteProps {
   expression: boolean
   children: React.ReactNode
+  unauthorizedRedirect: string
 }
 
-export function ProtectedRoute ({expression, children, ...rest }: IProtectedRoute) {
+export function ProtectedRoute ({expression, children, unauthorizedRedirect, ...rest }: IProtectedRoute) {
+  if(!expression){
+    window.location.href = unauthorizedRedirect
+  }
+
   return (
-    <Route {...rest} render={() => {
-      return expression
-        ? children
-        : <Redirect to={`/login${rest.path}`} />
-    }} />
+    <Route {...rest} render={() => (children)} />
   )
 }
