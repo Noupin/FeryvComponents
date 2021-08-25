@@ -1,6 +1,5 @@
 //Third Party Imports
-import React from 'react'
-import { FC } from 'react';
+import React, { useEffect, FC } from 'react'
 import { Route, RouteProps } from 'react-router-dom';
 
 
@@ -11,15 +10,17 @@ interface IProtectedRoute extends RouteProps {
 }
 
 export const ProtectedRoute: FC<IProtectedRoute> = ({condition,
-  unauthorizedRedirect='http://auth.feryv.com/login', path,
+  unauthorizedRedirect='http://auth.feryv.com/login', 
   encodedRedirectURI='', children, ...rest}: IProtectedRoute) => {
 
-  if(!condition){
-    window.location.assign(`${unauthorizedRedirect}${encodedRedirectURI}`)
-  }
+  useEffect(() => {
+    if(!condition){
+      window.location.assign(`${unauthorizedRedirect}${encodedRedirectURI}`)
+    }
+  }, [])
 
   return (
-    <Route path={path} {...rest}>
+    <Route {...rest}>
       {children}
     </Route>
   )
