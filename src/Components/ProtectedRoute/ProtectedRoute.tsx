@@ -5,22 +5,25 @@ import { BrowserRouter as Router,
 
 
 interface IProtectedRoute extends RouteProps {
-  expression: boolean
+  condition: boolean
   children: React.ReactNode
   unauthorizedRedirect?: string
   encodedRedirectURI?: string
 }
 
-export function ProtectedRoute ({expression, children,
+export function ProtectedRoute ({condition, children,
   unauthorizedRedirect='http://auth.feryv.com/login', 
   encodedRedirectURI='', ...rest }: IProtectedRoute) {
 
+  if(!condition){
+    window.location.assign(`${unauthorizedRedirect}${encodedRedirectURI}`)
+  }
+
   return (
     <Router>
-      <Route {...rest} render={() => {
-        return expression ?
-          children : window.location.href = `${unauthorizedRedirect}${encodedRedirectURI}`
-      }}/>
+      <Route {...rest}>
+        {children}
+      </Route>
     </Router>
   )
 }
