@@ -1,19 +1,19 @@
 //Third Party Imports
 import React from 'react'
+import { FC } from 'react';
 import { BrowserRouter as Router,
   Route, RouteProps } from 'react-router-dom';
 
 
 interface IProtectedRoute extends RouteProps {
   condition: boolean
-  children: React.ReactNode
   unauthorizedRedirect?: string
   encodedRedirectURI?: string
 }
 
-export function ProtectedRoute ({condition, children,
+export const ProtectedRoute: FC<IProtectedRoute> = ({condition,
   unauthorizedRedirect='http://auth.feryv.com/login', 
-  encodedRedirectURI='', ...rest }: IProtectedRoute) {
+  encodedRedirectURI='', children, ...rest}: IProtectedRoute) => {
 
   if(!condition){
     window.location.assign(`${unauthorizedRedirect}${encodedRedirectURI}`)
