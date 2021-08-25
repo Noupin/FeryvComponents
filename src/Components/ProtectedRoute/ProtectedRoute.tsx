@@ -1,8 +1,7 @@
 //Third Party Imports
 import React from 'react'
 import { FC } from 'react';
-import { BrowserRouter as Router,
-  Route, RouteProps } from 'react-router-dom';
+import { Route, RouteProps } from 'react-router-dom';
 
 
 interface IProtectedRoute extends RouteProps {
@@ -12,7 +11,7 @@ interface IProtectedRoute extends RouteProps {
 }
 
 export const ProtectedRoute: FC<IProtectedRoute> = ({condition,
-  unauthorizedRedirect='http://auth.feryv.com/login', 
+  unauthorizedRedirect='http://auth.feryv.com/login', path,
   encodedRedirectURI='', children, ...rest}: IProtectedRoute) => {
 
   if(!condition){
@@ -20,10 +19,8 @@ export const ProtectedRoute: FC<IProtectedRoute> = ({condition,
   }
 
   return (
-    <Router>
-      <Route {...rest}>
-        {children}
-      </Route>
-    </Router>
+    <Route path={path} {...rest}>
+      {children}
+    </Route>
   )
 }
