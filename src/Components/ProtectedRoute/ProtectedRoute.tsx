@@ -8,16 +8,18 @@ interface IProtectedRoute extends RouteProps {
   expression: boolean
   children: React.ReactNode
   unauthorizedRedirect?: string
+  encodedRedirectURI?: string
 }
 
 export function ProtectedRoute ({expression, children,
-  unauthorizedRedirect='http://auth.feryv.com/login', ...rest }: IProtectedRoute) {
+  unauthorizedRedirect='http://auth.feryv.com/login', 
+  encodedRedirectURI='', ...rest }: IProtectedRoute) {
 
   return (
     <Router>
       <Route {...rest} render={() => {
         return expression ?
-          children : window.location.href = `${unauthorizedRedirect}${rest.path}`
+          children : window.location.href = `${unauthorizedRedirect}${encodedRedirectURI}`
       }}/>
     </Router>
   )
