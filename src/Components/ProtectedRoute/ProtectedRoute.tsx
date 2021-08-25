@@ -1,6 +1,6 @@
 //Third Party Imports
 import React, { useEffect, FC } from 'react'
-import { Route, RouteProps } from 'react-router-dom';
+import { BrowserRouter, Route, RouteProps } from 'react-router-dom';
 
 
 interface IProtectedRoute extends RouteProps {
@@ -20,8 +20,10 @@ export const ProtectedRoute: FC<IProtectedRoute> = ({condition,
   }, [])
 
   return (
-    <Route {...rest}>
-      {children}
-    </Route>
+    <BrowserRouter>
+      <Route {...rest}>
+        {children}
+      </Route>
+    </BrowserRouter>
   )
 }
